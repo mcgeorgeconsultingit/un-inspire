@@ -1,0 +1,7 @@
+.navbar-brand, .nav-item a{
+    color: #fff !important;
+}
+
+.dropdown-menu li a{
+    color: #000 !important;
+}
