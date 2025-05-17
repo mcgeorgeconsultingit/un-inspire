@@ -7,6 +7,10 @@
     <title>Bootstrap Basic Structure</title>
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
+
     <link href="custom.css" rel="stylesheet">
 </head>
 
@@ -51,8 +55,186 @@
         </div>
     </div>
 </nav>
+<main>
 
-<!-- Bootstrap JS and dependencies (Popper) -->
+    <section class="hero-section">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="display-4 fw-bold">Welcome to Our Website</h1>
+                <p class="lead">Discover amazing content, connect with great people, and explore new opportunities.</p>
+                <a href="#explore" class="btn btn-primary btn-lg mt-3">Explore Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Optional content section -->
+    <section id="explore" class="container py-5">
+        <h2>Explore Section</h2>
+        <p>This is where users land after clicking the explore button.</p>
+    </section>
+
+    <section class="container py-5">
+        <h2 class="text-center mb-4">Our Features</h2>
+        <div class="row g-4">
+    
+            <!-- Card 1 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://source.unsplash.com/400x300/?technology" class="card-img-top" alt="Tech">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Innovative Tech</h5>
+                        <p class="card-text">Leverage modern tools to build smarter and faster solutions.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Card 2 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://source.unsplash.com/400x300/?teamwork" class="card-img-top" alt="Teamwork">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Collaboration</h5>
+                        <p class="card-text">Work together efficiently with our integrated tools.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Join Us</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Card 3 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://source.unsplash.com/400x300/?growth" class="card-img-top" alt="Growth">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Business Growth</h5>
+                        <p class="card-text">Accelerate your company’s success with tailored solutions.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Get Started</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Card 4 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://source.unsplash.com/400x300/?support" class="card-img-top" alt="Support">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">24/7 Support</h5>
+                        <p class="card-text">Our team is always available to assist you anytime.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">State</label>
+                <select id="inputState" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="inputZip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Check me out
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="container py-5">
+        <h2 class="mb-4">User List</h2>
+        <div class="table-responsive">
+            <table id="userTable" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Joined</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Alice Johnson</td>
+                        <td>alice@example.com</td>
+                        <td>Admin</td>
+                        <td>2023-01-15</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bob Smith</td>
+                        <td>bob@example.com</td>
+                        <td>Editor</td>
+                        <td>2023-02-10</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Carol White</td>
+                        <td>carol@example.com</td>
+                        <td>User</td>
+                        <td>2023-03-22</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<!-- jQuery (required for DataTables) -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+<!-- DataTable Initialization -->
+<script>
+    $(document).ready(function () {
+        $('#userTable').DataTable();
+    });
+</script>
+
 </body>
 </html>
